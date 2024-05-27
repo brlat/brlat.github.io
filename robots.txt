@@ -1,3 +1,0 @@
-User-agent: *
-
-https://brlat.github.io/sitemap.xml
