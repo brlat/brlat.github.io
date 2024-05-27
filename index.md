@@ -21,7 +21,7 @@
 ## 漢点字の紹介
 
 - [(点字データ) 漢点字の紹介](./tenjidata/kantenji1.brl.zip)
-- [(YouTube) 点字の漢字の一つ「漢点字」で「きき ⠣⠣」は「林」、「きう ⠣⠉」は「森」、漢点字について]https://youtu.be/UCMW8wk2mlQ?si=GIiwUpMrBhdyBSK1()
+- [(YouTube) 点字の漢字の一つ「漢点字」で「きき ⠣⠣」は「林」、「きう ⠣⠉」は「森」、漢点字について](https://youtu.be/UCMW8wk2mlQ?si=GIiwUpMrBhdyBSK1()
 
 ## 点字楽譜の紹介
 
@@ -47,5 +47,10 @@
 
 - [(点字データ) 「メモミュージック」機能について](./tenjidata/memomusic.brl.zip)
 - [(YouTube) KGS社 点字ディスプレイ「ブレイルメモスマート」の「メモミュージック」機能、点字楽譜を読みながら「ドレミ」を入力してビープ音で鳴らしたりMIDI保存ができます](https://youtu.be/Na4f-G2K9hI?si=D0VRdYXvHMEr3dun)
+
+<div>
+<hr>
+以上です、ありがとうございます
+</div>
 
 
