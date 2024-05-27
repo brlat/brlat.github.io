@@ -8,6 +8,6 @@
 
 ## 点字で絵本の読み聞かせ
 
-- [ehon1.brl.zip](/tenjidata/ehon1.brl.zip)
+- [ehon.brl.zip](./tenjidata/ehon.brl.zip)
 - [YouTube](https://youtu.be/PaHp6hRCKKE?si=-ulSVeFD771z2huG)
 
