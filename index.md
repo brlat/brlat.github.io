@@ -21,7 +21,7 @@
 ## 漢点字の紹介
 
 - [(点字データ) 漢点字の紹介](./tenjidata/kantenji1.brl.zip)
-- [(YouTube) 点字の漢字の一つ「漢点字」で「きき ⠣⠣」は「林」、「きう ⠣⠉」は「森」、漢点字について](https://youtu.be/UCMW8wk2mlQ?si=GIiwUpMrBhdyBSK1()
+- [(YouTube) 点字の漢字の一つ「漢点字」で「きき ⠣⠣」は「林」、「きう ⠣⠉」は「森」、漢点字について](https://youtu.be/UCMW8wk2mlQ?si=GIiwUpMrBhdyBSK1)
 
 ## 点字楽譜の紹介
 
