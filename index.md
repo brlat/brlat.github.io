@@ -4,10 +4,12 @@
 
 (6月8日更新)
 
+点字データは.brl形式で、それを.zip圧縮しています。
+
 ### 物理学の点訳図書
 
-- [YouTube 「宇宙と物質の起源」の紹介](https://youtu.be/EdEWaeY5Rnk)
 - [点字データ 「宇宙と物質の起源」の紹介](/tenjidata/buturi1.brl.zip)
+- [YouTube 「宇宙と物質の起源」の紹介](https://youtu.be/EdEWaeY5Rnk)
 
 ### 点字で絵本の読み聞かせ
 
@@ -60,7 +62,6 @@
 
 点字データと、YouTubeの音声で紹介します。
 
-点字データは.brl形式で、それを.zip圧縮しています。
 
 </div>
 
