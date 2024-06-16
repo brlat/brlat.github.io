@@ -8,9 +8,9 @@
 
 ### 第10号: 「六点漢字かんたんガイド」
 
-- [点字データ 「六点漢字かんたんガイド」 18行32マスの26ページ]
-- [点字データ [六点漢字かんたんガイドの紹介]
-- [YouTube 「六点漢字かんたんダイドの紹介」]
+- [点字データ 「六点漢字かんたんガイド」 18行32マスの26ページ](./tenjidata/rokutenkanji-kantan-gaido.brl.zip)
+- [点字データ [六点漢字かんたんガイドの紹介](./tenjidata/rokutenkanji-kantan-gaido-syokai.brl.zip)
+- [YouTube 「六点漢字かんたんダイドの紹介」](https://youtu.be/iJJ-iTbGQGs)
 
 ### 第9号: 物理学の点訳図書
 
