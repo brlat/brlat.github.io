@@ -4,10 +4,11 @@
 
 点字データは.brlまたは.bes形式で、それを.zip圧縮しています。
 
-### 第12号: 「楽しい漢点字」
+### 第11号: 「楽しい漢点字」
 
 - [点字データ: 「楽しい漢点字 - 6点式漢字符号版」 32マス18行の105ページ](./tenjidata/tanosi kantenji.zip)
 - [YouTubeスクリプト点字データ: 「楽しい漢点字」の紹介](./tenjidata/tanosi kantenji syokai.brl.zip)
+- [YouTube音声: 「楽しい漢点字 - 6点式版」の紹介](https://youtu.be/Fjqxg3djbrM)
 
 ### 第10号: 「六点漢字かんたんガイド」
 
