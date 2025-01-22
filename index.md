@@ -4,7 +4,7 @@
 
 下記のリンクから.besと.brl形式の点字データをダウンロードできます。
 
-- [「小学１年生で習う80文字の漢点字を8日でマスター!」] 1nensei_kantenji.zip(./tenjidata/1nensei_kantenji.zip)
+- [「小学１年生で習う80文字の漢点字を8日でマスター!」 1nensei_kantenji.zip](./tenjidata/1nensei_kantenji.zip)
 
 漢点字は正式には通常の6点の点字の上2点で漢字符号を表しますが、この点字データでは便宜上6点の点字で表記しています。
 
