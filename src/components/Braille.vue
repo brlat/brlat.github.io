@@ -4,12 +4,12 @@
     <h1 v-if="bes.docTitle">{{ bes.docTitle }}</h1>
     <p v-if="checkYomi">{{ tenji2yomi(bes.docTitle) }}</p>
     <nav v-if="bes.title" :aria-label="t('toc')" class="toc content" id="toc">
-      <ol>
+      <ul>
         <li v-for="(title,pno) in bes.title" :key="pno">
           <a :href="'#page'+(pno+1)">{{title}}</a>
           <p v-if="checkYomi" class="toc-yomi">{{ tenji2yomi(title) }}</p>
         </li>
-      </ol>
+      </ul>
     </nav>
     <article>
       <section v-for="(page,pno) in bes.body" :key="pno" class="columns page" :id="'page'+(pno+1)">
@@ -87,6 +87,10 @@ function tenji2yomi(str: string | false): string {
 .toc {
   padding-bottom: 2rem;
   border-bottom: 2px solid #CCC;
+}
+.toc ul {
+  list-style: none;
+  margin-left: 0;
 }
 .page {
   position: relative;
