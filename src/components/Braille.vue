@@ -76,7 +76,8 @@ function tenji2yomi(str: string | false): string {
   if (props.isBrf) {
     return decodeUEB(unicode2brf(line))
   }
-  return tenji.fromTenji(line)
+  // BES の行末に付加される行番号（例: 1.、2.）は読み仮名表示に含めない。
+  return tenji.fromTenji(line).replace(/[ \u3000]*[0-9０-９]+[.．]$/, '')
 }
 </script>
 
