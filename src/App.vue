@@ -16,11 +16,6 @@
               <button class="button is-small is-light" id="closeFile" :disabled="isFileClosed" @click="onFileClose">{{ t('closeFile') }}</button>
             </div>
             <div class="navbar-item">
-              <o-switch v-model="isYomiChecked" size="small">
-                {{ t('yomiLabel') }} {{ isYomiChecked ? t('show') : t('hide') }}
-              </o-switch>
-            </div>
-            <div class="navbar-item">
               <div class="select is-small">
                 <select v-model="locale" aria-label="Language">
                   <option value="ja">日本語</option>
@@ -38,7 +33,7 @@
 
     <div class="container is-fluid">
         <main class="section">
-          <Braille :braille="bes" :checkYomi="isYomiChecked" :isBrf="isBrf"></Braille>
+          <Braille :braille="bes" :isBrf="isBrf"></Braille>
         </main>
     </div>
 
@@ -55,7 +50,6 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import { OSwitch } from '@oruga-ui/oruga-next'
 import Braille from './components/Braille.vue'
 import bes2unicode from './modules/bes2unicode'
 import brf2unicode from './modules/brf2unicode'
@@ -63,7 +57,6 @@ import { useI18n } from './modules/i18n'
 
 const { t, locale } = useI18n()
 
-const isYomiChecked = ref(false)
 const openFile = ref(false)
 const isBrf = ref(false)
 const str = ref('')
@@ -89,7 +82,6 @@ const onFileChange = (event: Event) => {
       openFile.value = true
       isBrf.value = isBrfFile
       if (isBrfFile) {
-        isYomiChecked.value = false
         const text = target.result as string
         str.value = brf2unicode(text)
       } else {
@@ -120,7 +112,6 @@ const onGetBesUrl = async (url: string) => {
     const response = await fetch(url, { method: 'GET' })
     isBrf.value = isBrfUrl
     if (isBrfUrl) {
-      isYomiChecked.value = false
       const text = await response.text()
       str.value = brf2unicode(text)
     } else {
