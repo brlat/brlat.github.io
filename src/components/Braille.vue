@@ -6,10 +6,10 @@
         <div class="column yomi">
           <template v-for="(line,lno) in page" :key="lno">
             <hr v-if="line === '@HR@'">
-            <h1 v-else-if="line.slice(0,4) ==='@H1@'">{{ tenji2yomi(line.slice(4)) }}</h1>
-            <h2 v-else-if="line.slice(0,4) ==='@H2@'">{{ tenji2yomi(line.slice(4)) }}</h2>
+            <h1 v-else-if="line.slice(0,4) ==='@H1@'">{{ tenji2kana(line.slice(4)) }}</h1>
+            <h2 v-else-if="line.slice(0,4) ==='@H2@'">{{ tenji2kana(line.slice(4)) }}</h2>
             <p v-else-if="line.length === 0"><br /></p>
-            <p v-else>{{ tenji2yomi(line) }}</p>
+            <p v-else>{{ tenji2kana(line) }}</p>
           </template>
         </div>
       </section>
@@ -39,7 +39,13 @@ const props = withDefaults(defineProps<{
 const isFileClose = computed(() => props.braille.length === 0)
 const bes = computed((): ParsedBraille => splitbraille(props.braille))
 
-function tenji2yomi(str: string | false): string {
+function toKatakana(value: string): string {
+  return value.replace(/[\u3041-\u3096\u309D-\u309F]/g, char =>
+    String.fromCharCode(char.charCodeAt(0) + 0x60)
+  )
+}
+
+function tenji2kana(str: string | false): string {
   if (str === false) return ''
   let line = str
   if (line.slice(0, 4) === '@H1@') line = line.slice(4)
@@ -49,7 +55,7 @@ function tenji2yomi(str: string | false): string {
   if (props.isBrf) {
     return decodeUEB(unicode2brf(line))
   }
-  return tenji.fromTenji(line)
+  return toKatakana(tenji.fromTenji(line))
 }
 </script>
 
