@@ -17,7 +17,7 @@
             </div>
           </div>
           <div class="navbar-end">
-            <p class="navbar-item">⠰⠠⠃⠠⠑⠠⠎⠀⠤⠢⠥⠃⠙⠀⠘⠭⠒⠁⠒</p>
+            <p class="navbar-item"><hr></p>
           </div>
         </div>
       </nav>
