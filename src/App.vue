@@ -31,9 +31,16 @@
 
     <footer class="footer">
       <div class="content has-text-centered">
+        <hr>
         <p>
-          <strong>{{ t('title') }}</strong> by <a href="https://twitter.com/shunito">Shunsuke Ito</a>.
-          The <a href="https://github.com/shunito/bes-viewer">source code</a> is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+          これは、
+          <a href="https://github.com/shunito/bes-viewer">UniBraille Viewer by Shunsuke Ito</a>
+          を変更して
+          <a href="https://github.com/brlat/brlat.github.io/">brlat</a> が作成しました。
+        </p>
+        <p>
+          ライセンスは
+          <a href="https://opensource.org/license/mit">MIT</a> です。
         </p>
       </div>
     </footer>
