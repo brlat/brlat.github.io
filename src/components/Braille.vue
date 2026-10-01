@@ -43,7 +43,7 @@ const bes = computed((): ParsedBraille => splitbraille(props.braille))
 const copyStatus = ref('')
 const convertedText = computed(() => bes.value.body
   .map(page => page.map(line => line === '@HR@' ? '' : tenji2kana(line)).join('\n'))
-  .join('\n\n'))
+  .join('\n'))
 
 async function copyBody() {
   const text = convertedText.value
