@@ -93,8 +93,7 @@ function tenji2kana(str: string | false): string {
   let line = str
   if (line.slice(0, 4) === '@H1@') line = line.slice(4)
   if (line.slice(0, 4) === '@H2@') line = line.slice(4)
-  if (line.slice(0, 4) === '@HR@') return '<hr />'
-  if (line.length === 0) return '<br />'
+  if (line.slice(0, 4) === '@HR@' || line.length === 0) return ''
   if (props.isBrf) {
     return decodeUEB(unicode2brf(line))
   }
