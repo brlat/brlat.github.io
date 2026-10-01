@@ -6,7 +6,13 @@ import { fileURLToPath, URL } from 'node:url'
 export default defineConfig({
   plugins: [
     vue(),
-    VitePWA({ registerType: 'autoUpdate' })
+    VitePWA({
+      registerType: 'autoUpdate',
+      workbox: {
+        // License pages are standalone documents; do not send them to the SPA fallback.
+        navigateFallbackDenylist: [/^\/LICENSE\.txt$/]
+      }
+    })
   ],
   resolve: {
     alias: {
