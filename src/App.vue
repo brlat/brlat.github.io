@@ -34,13 +34,11 @@
         <hr>
         <p>
           これは、
-          <a href="https://github.com/shunito/bes-viewer">UniBraille Viewer by Shunsuke Ito</a>
-          を変更して
-          <a href="https://github.com/brlat/brlat.github.io/">brlat</a> が作成しました。
+          <a href="https://github.com/shunito/bes-viewer">Shunsuke Ito の UniBraille Viewer</a>
+          を <a href="https://github.com/brlat/brlat.github.io/">brlat</a> が改変・公開したものです。
         </p>
         <p>
-          ライセンスは
-          <a href="https://opensource.org/license/mit">MIT</a> です。
+          ライセンス：<a href="/LICENSE">MIT License（著作権表示とライセンス全文）</a>
         </p>
       </div>
     </footer>
