@@ -6,8 +6,6 @@
         <div class="column yomi">
           <template v-for="(line,lno) in page" :key="lno">
             <hr v-if="line === '@HR@'">
-            <h1 v-else-if="line.slice(0,4) ==='@H1@'">{{ tenji2kana(line.slice(4)) }}</h1>
-            <h2 v-else-if="line.slice(0,4) ==='@H2@'">{{ tenji2kana(line.slice(4)) }}</h2>
             <p v-else-if="line.length === 0"><br /></p>
             <p v-else>{{ tenji2kana(line) }}</p>
           </template>
