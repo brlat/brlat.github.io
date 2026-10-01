@@ -38,7 +38,7 @@
           を <a href="https://github.com/brlat/brlat.github.io/">brlat</a> が改変・公開したものです。
         </p>
         <p>
-          ライセンス：<a href="/LICENSE">MIT License（著作権表示とライセンス全文）</a>
+          ライセンス：<a href="/LICENSE.txt">MIT License（著作権表示とライセンス全文）</a>
         </p>
       </div>
     </footer>
