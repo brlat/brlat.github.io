@@ -35,7 +35,7 @@
         <p>
           これは、
           <a href="https://github.com/shunito/bes-viewer">Shunsuke Ito の UniBraille Viewer</a>
-          を <a href="https://github.com/brlat/brlat.github.io/">brlat</a> が改変・公開したものです。
+          を <a href="https://note.com/gesund_fumika">文佳</a> と、 <a href="https://github.com/brlat/brlat.github.io/">brlat</a> が改変・公開したものです。
         </p>
         <p>
           ライセンス：<a href="/LICENSE.txt">MIT License（著作権表示とライセンス全文）</a>
