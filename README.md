@@ -20,6 +20,9 @@ iPhoneやiPadなどでダウンロードした.zipファイルは、「ファイ
 [brlat](https://github.com/brlat/)
  が、ChatGPT Codexで変更して作成しました。
 
+これに加えて、 
+[文佳](https://note.com/gesund_fumika) さんに、変換された仮名データを、音声として聞きやすいよう、ソースコードに追加修正してもらいました。ありがとうございますm(__)m
+
 ライセンスは
 <a href="https://opensource.org/license/mit">MIT</a>
 です。
