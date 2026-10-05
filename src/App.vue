@@ -10,7 +10,7 @@
           <div class="navbar-start">
             <div class="navbar-item">
               <label for="file">{{ t('selectFile') }}</label>
-              <input type="file" id="file" name="file" accept=".bes,.brf,.brl,.bse" @change="onFileChange" ref="fileInput" />
+              <input type="file" id="file" name="file" accept=".bes,.BES" @change="onFileChange" ref="fileInput" />
             </div>
             <div class="navbar-item">
               <button class="button is-small is-light" id="closeFile" :disabled="isFileClosed" @click="onFileClose">{{ t('closeFile') }}</button>
@@ -70,31 +70,25 @@ const onFileChange = (event: Event) => {
   if (!files || !files.length) return
 
   const file = files[0]
-  const ext = file.name.toLowerCase().split('.').pop()
-  const isBrfFile = ext === 'brf' || ext === 'brl' || ext === 'bse'
+  if (!file.name.toLowerCase().endsWith('.bes')) {
+    window.alert('.bes点字データではありません')
+    input.value = ''
+    return
+  }
 
   const reader = new FileReader()
   reader.onloadend = (theFile) => {
     const target = theFile.target as FileReader
     if (target && target.readyState === FileReader.DONE) {
       openFile.value = true
-      isBrf.value = isBrfFile
-      if (isBrfFile) {
-        const text = target.result as string
-        str.value = brf2unicode(text)
-      } else {
-        const result = target.result as ArrayBuffer
-        const arr = new Uint8Array(result)
-        str.value = bes2unicode(arr)
-      }
+      isBrf.value = false
+      const result = target.result as ArrayBuffer
+      const arr = new Uint8Array(result)
+      str.value = bes2unicode(arr)
     }
   }
 
-  if (isBrfFile) {
-    reader.readAsText(file)
-  } else {
-    reader.readAsArrayBuffer(file)
-  }
+  reader.readAsArrayBuffer(file)
 }
 
 const onFileClose = () => {
