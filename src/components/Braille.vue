@@ -97,7 +97,14 @@ function tenji2kana(str: string | false): string {
   if (props.isBrf) {
     return decodeUEB(unicode2brf(line))
   }
-  return toKatakana(tenji.fromTenji(line))
+
+  // tenjiライブラリでカナに変換してカタカナ化
+  let kana = toKatakana(tenji.fromTenji(line))
+
+  // 「ヱ」を感嘆符に変換
+  kana = kana.replace(/ヱ/g, '！')
+
+  return kana
 }
 </script>
 
