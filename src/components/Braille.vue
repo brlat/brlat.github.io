@@ -101,8 +101,12 @@ function tenji2kana(str: string | false): string {
   // tenjiライブラリでカナに変換してカタカナ化
   let kana = toKatakana(tenji.fromTenji(line))
 
-  // 「ヱ」を感嘆符に変換
-  kana = kana.replace(/ヱ/g, '！')
+  kana = kana
+    .replace(/コーータ/g, '⇔') // 左右矢印
+    .replace(/ーータ/g, '→')  // 右向き矢印
+    .replace(/コーー/g, '←') // 左向き矢印
+    .replace(/ッッッ/g, '……') // 点線
+    .replace(/ーー/g, '─') // 長音２文字分を罫線に変換
 
   return kana
 }
