@@ -381,7 +381,7 @@ const formatBrailleText = (text: string): string => {
         if (line === '') {
           isStart = true
           isEnd = true
-        } else if (line.charAt(mostFrequentIndex) === '\u283c') {
+        } else if (mostFrequentIndex !== null && line.charAt(mostFrequentIndex) === '\u283c') {
           const firstPart = line.slice(0,mostFrequentIndex + 1)
           const secondPart = line.slice(mostFrequentIndex + 1)
           const replacedFirstPart = firstPart
