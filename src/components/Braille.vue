@@ -99,7 +99,7 @@ function tenji2kana(str: string | false): string {
   }
 
   // tenjiライブラリでカナに変換してカタカナ化
-  let kana = toKatakana(tenji.fromTenji(line))
+  let kana =  toKatakana(tenji.fromTenji(line))
 
   // 「ヱ」を感嘆符に変換
   kana = kana.replace(/ヱ/g, '！')

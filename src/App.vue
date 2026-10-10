@@ -10,7 +10,7 @@
           <div class="navbar-start">
             <div class="navbar-item">
               <label for="file">{{ t('selectFile') }}</label>
-              <input type="file" id="file" name="file" accept=".bes,.BES" @change="onFileChange" ref="fileInput" />
+              <input type="file" id="file" name="file" accept=".bes,.brf,.brl,.bse" @change="onFileChange" ref="fileInput" />
             </div>
             <div class="navbar-item">
               <button class="button is-small is-light" id="closeFile" :disabled="isFileClosed" @click="onFileClose">{{ t('closeFile') }}</button>
@@ -35,7 +35,7 @@
         <p>
           これは、
           <a href="https://github.com/shunito/bes-viewer">Shunsuke Ito の UniBraille Viewer</a>
-          を <a href="https://note.com/gesund_fumika">文佳</a> と、 <a href="https://github.com/brlat/brlat.github.io/">brlat</a> が改変・公開したものです。
+          を <a href="https://github.com/brlat/brlat.github.io/">brlat</a> が改変・公開したものです。
         </p>
         <p>
           ライセンス：<a href="/LICENSE.txt">MIT License（著作権表示とライセンス全文）</a>
@@ -63,7 +63,6 @@ const fileInput = ref<HTMLInputElement | null>(null)
 const bes = computed(() => str.value)
 const isFileClosed = computed(() => !openFile.value)
 
-
 // 文字列の最終調整（カッコの調整）
 function finalizeText(text: string): string {
   const finalizedText = text
@@ -84,7 +83,7 @@ function finalizeText(text: string): string {
   const regex = new RegExp(`(\\u283c${targetChars}+)\\u2800`, "gu")
 
   return finalizedText.replace(regex, "$1\u2824\u2800")
-}
+} 
 
 // BESのユニコードを整形するメイン関数
 const formatBrailleText = (text: string): string => {
@@ -151,7 +150,7 @@ const formatBrailleText = (text: string): string => {
         }
         continue
       }
-
+        
       // 1ページ目のみに適用
       if (isFirstPage) {
         // 標題紙の枠線の始まりと終わりを判別
@@ -167,7 +166,7 @@ const formatBrailleText = (text: string): string => {
         }
 
         line = line.replace(/^(\u2800)+|(\u2800)+$/g, '')
-
+          
         // タイトル枠の始まりと終わりを判別
         if(titleFrameCount < 2 && /([^\u2800])\1{10,}/u.test(line)) {
           titleFrameCount++
@@ -249,7 +248,7 @@ const formatBrailleText = (text: string): string => {
     if (/\u2800{25,}[\u283c]/.test(line)) {
       continue
     }
-
+    
     // 枠線の行は空行に
     if (regex2.test(line) || /\u2812{10,}/.test(line)) {
       result.push('')
@@ -327,25 +326,33 @@ const onFileChange = (event: Event) => {
   if (!files || !files.length) return
 
   const file = files[0]
-  if (!file.name.toLowerCase().endsWith('.bes')) {
-    window.alert('.bes点字データではありません')
-    input.value = ''
-    return
-  }
+  const ext = file.name.toLowerCase().split('.').pop()
+  const isBrfFile = ext === 'brf' || ext === 'brl' || ext === 'bse'
 
   const reader = new FileReader()
   reader.onloadend = (theFile) => {
     const target = theFile.target as FileReader
     if (target && target.readyState === FileReader.DONE) {
       openFile.value = true
-      isBrf.value = false
-      const result = target.result as ArrayBuffer
-      const arr = new Uint8Array(result)
-      str.value = formatBrailleText(bes2unicode(arr))
+      isBrf.value = isBrfFile
+      if (isBrfFile) {
+        const text = target.result as string
+        str.value = brf2unicode(text)
+      } else {
+        const result = target.result as ArrayBuffer
+        const arr = new Uint8Array(result)
+        let converted = bes2unicode(arr)
+        str.value = formatBrailleText(converted)
+        console.log(str.value)
+      }
     }
   }
 
-  reader.readAsArrayBuffer(file)
+  if (isBrfFile) {
+    reader.readAsText(file)
+  } else {
+    reader.readAsArrayBuffer(file)
+  }
 }
 
 const onFileClose = () => {
@@ -365,7 +372,8 @@ const onGetBesUrl = async (url: string) => {
       str.value = brf2unicode(text)
     } else {
       const buf = await response.arrayBuffer()
-      str.value = formatBrailleText(bes2unicode(new Uint8Array(buf)))
+      let converted = bes2unicode(new Uint8Array(buf))
+      str.value = formatBrailleText(converted)
     }
     openFile.value = true
   } catch (error) {
